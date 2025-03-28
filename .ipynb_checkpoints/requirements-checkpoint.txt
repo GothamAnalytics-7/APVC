@@ -1,0 +1,16 @@
+tensorflow
+jupyterlab>=4.4.0rc0
+keras
+numpy
+matplotlib
+scikit-learn
+pandas
+seaborn
+pydot
+opencv-python
+lxml[html_clean]
+tf_keras_vis
+nbformat
+nbconvert
+optuna
+optuna-dashboard

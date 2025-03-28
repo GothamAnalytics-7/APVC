@@ -1,0 +1,15 @@
+tensorflow[and-cuda] --extra-index-url https://pypi.nvidia.com
+keras
+numpy
+matplotlib
+scikit-learn
+pandas
+seaborn
+pydot
+opencv-python
+lxml[html_clean]
+tf_keras_vis
+nbformat
+nbconvert
+optuna
+optuna-dashboard
