@@ -171,7 +171,7 @@ Após estas fases, o ambiente estará pronto para a execução dos notebooks com
 
 Com o ambiente configurado, abrir o terminal dentro do DevContainer e iniciar o Jupyter Notebook.
 
-Agora você pode executar seus notebooks aproveitando a aceleração por GPU!
+Agora é possível executar os notebooks e aproveitar a aceleração pela GPU! :)
 
 ---
 
