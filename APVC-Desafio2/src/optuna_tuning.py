@@ -64,7 +64,7 @@ def create_model(trial: optuna.Trial) -> keras.Sequential:
         model.add(data_augmentation)
     for i_layer in range(params["n_layers_CNN"]):  # For suggested number of CNN layers
         params[f"CNN_layer{i_layer}"] = {
-            "n_filters"  : trial.suggest_int(f"CNN_layer{i_layer}_n_filters", 4, 64, log=True),       # N filters for current CNN layer
+            "n_filters"  : trial.suggest_int(f"CNN_layer{i_layer}_n_filters", 4, 64, log=True),         # N filters for current CNN layer
             "kernel_size": trial.suggest_int(f"CNN_layer{i_layer}_kernel_size", 2, 6),                  # Kernel size for current layer
             "activation" : trial.suggest_categorical(f"CNN_layer{i_layer}_activation", [None, "relu"])  # Activation for current layer
         }
@@ -81,7 +81,7 @@ def create_model(trial: optuna.Trial) -> keras.Sequential:
             model.add(layers.BatchNormalization())
         if params[f"CNN_layer{i_layer}"]["activation"]:  # If not None, add selected activation layer
             model.add(layers.Activation(params[f"CNN_layer{i_layer}"]["activation"]))
-        if i_layer % params["pool_every_n_layers"] == 0:  # If current layer number is divisible by pooling control, add pooling layer
+        if (i_layer + 1 % params["pool_every_n_layers"] == 0) or (i_layer + 1 == params["n_layers_CNN"]):  # If current layer number is divisible by pooling control or is last CNN layer, add pooling layer
             params[f"CNN_layer{i_layer}"]["pool_size"] = trial.suggest_int(f"CNN_layer{i_layer}_pool_size", 1, 3)  # Pool size for current layer
             model.add(layers.MaxPooling2D(params[f"CNN_layer{i_layer}"]["pool_size"]))
     model.add(layers.Flatten())
@@ -134,7 +134,7 @@ study = optuna.create_study(
     load_if_exists=True
 )
 
-# Optimize for n_trials, using one thread, timeout of 5 min
+# Optimize for n_trials, using one thread, timeout of 1h
 study.optimize(objective, n_trials=100, n_jobs=1, timeout=3600)
 
 print("Best hyperparameters:", study.best_params)
@@ -154,4 +154,4 @@ history = model.fit(
         callbacks=[best_model_checkpoint, early_stopping, reduce_lr]
     )
 
-# Rodar no terminal, no memso diretório que optuna_journal_storage.log: optuna-dashboard optuna_journal_storage.log
+# Rodar no terminal, no mesmo diretório que optuna_journal_storage.log: optuna-dashboard optuna_journal_storage.log
