@@ -162,7 +162,7 @@ RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 libcudnn9-cuda-12  
 ### 4. Abrir o VS Code e Fazer "Rebuild and Reopen in Container"
 
 1. No **VS Code**, abrir a pasta raiz do projeto.
-2. Pressione `Ctrl+Shift+P` e selecione **Reopen in Container**.
+2. Pressionar `Ctrl+Shift+P` e selecionar **Reopen in Container**.
 3. Aguardar a reconstrução do container (`Rebuild` se necessário).
 
 Após estas fases, o ambiente estará pronto para a execução dos notebooks com suporte a GPU.
@@ -175,5 +175,5 @@ Agora é possível executar os notebooks e aproveitar a aceleração pela GPU! :
 
 ---
 
-Se encontrar problemas, pode ser necessário verificar se os drivers da NVIDIA e o CUDA estão instalados e configurados corretamente no sistema.
+Se existirem problemas, pode ser necessário verificar se os drivers da NVIDIA e o CUDA estão instalados e configurados corretamente no sistema.
 
