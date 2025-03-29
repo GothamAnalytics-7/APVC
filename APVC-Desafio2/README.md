@@ -40,6 +40,7 @@ docker pull tensorflow/tensorflow:latest-gpu-jupyter
 
 ### 3. Criar o DevContainer na Root do repositório (APVC)
 Na raiz do desafio 2 (root), configurar um DevContainer para correr dentro do ambiente do Docker.
+
 **NOTA**: Em alternativa aos 3 passos seguintes desta secção, é possível apenas utilizar o `.devcontainer` criado na root deste repositório.
 
 1. Criar um diretório `.devcontainer` na raiz do projeto, se ainda não existir.
@@ -59,7 +60,7 @@ RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 libcudnn9-cuda-12  
 ```
 
 
-3. Dentro desse diretório, criar um arquivo `devcontainer.json` com o seguinte conteúdo:
+3. Dentro deste diretório, criar um ficheiro `devcontainer.json` com o seguinte conteúdo:
 
 ```json
 {
