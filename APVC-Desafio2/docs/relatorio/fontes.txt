@@ -1,0 +1,8 @@
+Missing Rainfall Daily Data: A Comparison Among Gap-Filling Approaches
+https://link.springer.com/article/10.1007/s11004-023-10078-6
+
+Spatiotemporal models for Poisson areal data with an application to the AIDS epidemic in Rio de Janeiro
+https://arxiv.org/pdf/2206.00869.pdf
+
+A Poisson process model for Monte Carlo
+https://www.cs.toronto.edu/~cmaddis/pubs/ppmontecarlo.pdf
