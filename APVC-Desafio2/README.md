@@ -62,7 +62,7 @@ RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 libcudnn9-cuda-12  
 
 3. Dentro deste diretório, criar um ficheiro `devcontainer.json` com o seguinte conteúdo:
 
-```json
+```jsonc
 {
 	// For quick reference: https://containers.dev/implementors/json_reference/
 	"name": "Tensorflow GPU Jupyter",
