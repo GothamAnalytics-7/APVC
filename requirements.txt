@@ -15,3 +15,5 @@ nbconvert
 optuna
 optuna-dashboard
 numba
+--pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
+efficientnet_pytorch
